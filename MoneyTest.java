@@ -40,4 +40,49 @@ public class MoneyTest{
 }
 /*###################################################################################*/
 /*문제해결 배열 쓰는 방법*/
-import
+import java.util.Scanner;
+public class MoneyTest{
+    public static void main(String[]agrs){
+        Scanner sc = new Scanner(System.in);
+        int money;
+        while (true){
+            System.out.print("금액은 입력해주세요(0~99.999): ");
+            money= sc.nextInt();
+            if (0<money && money<99999){
+                break;
+            }
+        }
+        int[] money_unit={50000,10000,5000,1000,500,100,50,10};
+        String[] names = {
+            "오만 원권 ", "만 원권 ", "오천 원권 ", "천 원권 ",
+            "500원 주화 ", "100원 주화 ", "50원 주화 ", "10원 주화 "
+        };
+        String[] units = {" 장", " 장", " 장", " 장", " 개", " 개", " 개", " 개"};
+        for (int i =0;i<money_unit.length;i++){
+            int count= money/money_unit[i];
+            money %= money_unit[i];
+            System.out.println(names[i]+ count+ units[i]);
+            
+        }
+        sc.close();
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
